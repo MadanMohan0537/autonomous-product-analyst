@@ -8,11 +8,19 @@ Evidence-first · Safe SQL · Multi-dimensional analysis · Local synthetic MVP 
 
 [![CI](https://github.com/MadanMohan0537/autonomous-product-analyst/actions/workflows/ci.yml/badge.svg)](https://github.com/MadanMohan0537/autonomous-product-analyst/actions/workflows/ci.yml)
 ![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-14%20passing-22c55e)
-![Evaluation](https://img.shields.io/badge/evaluation-2%2F2%20passing-14b8a6)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
+
+## Reproduce an investigation before connecting your own data
+
+Start with the synthetic dataset and a supported metric question from the examples below. Inspect the comparison windows, segment evidence and executed queries in the response before trusting the narrative.
+
+The investigation identifies associations in the configured metric model. It does not establish causality or authorize unrestricted access to arbitrary databases. A read-only SQL boundary helps constrain execution; it does not determine whether a user's data access is appropriate.
+
+For implementation review, use [API orchestration](backend/app/main.py), [data generation](scripts/generate_data.py), [tests](tests/) and [evaluation fixtures](evaluation/). Preserve the database snapshot and question with each report.
+
+
 
 Autonomous Product Analyst investigates product-performance changes without requiring a PM to manually write and run a sequence of SQL queries. It resolves a question to a governed metric, compares time periods, checks eight diagnostic dimensions, ranks contributors, quantifies statistical evidence, relates the timing to product releases, and produces a PM-ready explanation with a concrete next step.
 
